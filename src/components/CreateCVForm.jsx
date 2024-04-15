@@ -14,7 +14,7 @@ const initialSkillsSetState = {
     skillsSet: "",
 }
 
-const CreateCVForm = () => {
+const CreateCVForm = ({ onCreate }) => {
     const { cvInfo, setCvInfo } = useContext(CvInfoContext)
     const [workExperience, setWorkExperience] = useState(initialWorkExpState)
     const [skillsSet, setSkillsSet] = useState(initialSkillsSetState)
@@ -69,8 +69,13 @@ const CreateCVForm = () => {
         setCertificationName(e.target.value)
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        onCreate()
+    }
+
   return (
-    <form action="">
+    <form onSubmit={handleSubmit}>
       <h2>Add your info</h2>
       <h3>Personal Info</h3>
       <section>

@@ -1,13 +1,13 @@
-import CreateCVForm from './components/CreateCVForm'
+import { CvInfoProvider } from './context/CvInfoProvider'
+import MainComponent from './components/MainComponent'
 
 import './App.css'
-import { CvInfoProvider } from './context/CvInfoProvider'
 
 function App() {
 
   return (
     <CvInfoProvider>
-      <CreateCVForm />
+      <MainComponent />
     </CvInfoProvider>
   )
 }
