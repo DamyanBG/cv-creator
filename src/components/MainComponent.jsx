@@ -13,6 +13,7 @@ const MainComponent = () => {
     return (
         <>
             <CreateCVForm onCreate={handleCreateCv} />
+            <pagebreak></pagebreak>
             {showCv && (
                 <section className="cvMain">
                     <section className="left">
@@ -42,16 +43,22 @@ const MainComponent = () => {
                                 ))}
                             </article>
                         </section>
-                        <section>
+                        <section className="education">
                             <h3>Education</h3>
+                            <p>{cvInfo.education.degreeDescription}</p>
+                            <p>{cvInfo.education.university}</p>
+                            <p>{cvInfo.education.degreeFrom} - {cvInfo.education.degreeTo}</p>
                         </section>
-                        <section>
+                        <section className="skills">
                             <h3>Skills</h3>
                             <article>
                                 {cvInfo.skills.map((s) => (
                                     <article key={s.skillSet}>
-                                        <p>{s.skillSetName}</p>
-                                        <p>{s.skillsSet}</p>
+                                        <article>{s.skillSetName}</article>
+                                        <article className="lineContainer">
+                                            <article className="line" />
+                                        </article>
+                                        <article>{s.skillsSet}</article>
                                     </article>
                                 ))}
                             </article>
@@ -86,12 +93,17 @@ const MainComponent = () => {
                                 </article>
                             )}
                         </section>
-                        <article>
+                        <section className="certifications">
                             <h3>Certifications</h3>
                             {cvInfo.certifications.map((cert) => (
                                 <p key={cert}>{cert}</p>
                             ))}
-                        </article>
+                        </section>
+                        <section className="achievements">
+                            <h3>Achievements</h3>
+                            <p>Stack Overflow reputation: 350 </p>
+                            <p>Microsoft Azure documentation contributor</p>
+                        </section>
                     </section>
                 </section>
             )}

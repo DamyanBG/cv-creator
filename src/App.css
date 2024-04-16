@@ -6,6 +6,12 @@ body {
     /* Additional CSS styling */
 }
 
+@media print {
+  form {
+    display: none;
+  }
+}
+
 
 form {
   text-align: center;
@@ -14,7 +20,7 @@ form {
 .cvMain {
   display: flex;
   justify-content: space-between;
-  padding: 12px 48px;
+  /* padding: 12px 12px; */
 }
 
 .left {
@@ -30,6 +36,10 @@ form {
 .names > article {
   padding-top: 12px;
   font-size: 18px;
+  border-bottom: 1px solid blue;
+}
+
+.workExperience {
   border-bottom: 1px solid blue;
 }
 
@@ -68,21 +78,75 @@ form {
   color: red;
 }
 
-/* .experienceBlock > :first-child > article::before {
-  display: block;
-  content: "";
-  width: 20px;
+.education {
   border-bottom: 1px solid blue;
-} */
+}
+
+.education > * {
+  padding-left: 4px;
+}
+
+.skills > article > article {
+  display: flex;
+}
+
+.skills > article > article > * {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.skills .lineContainer {
+  padding-top: 4px;
+}
+
+.skills .line {
+  width: 30px;
+  height: 2px;
+  background: blue;
+  margin: 6px 0;
+}
 
 .right {
   width: 30%;
 }
 
 .photoContainer {
-  width: 100%;
+  position: relative; width: 200px; height: 200px; overflow: hidden; border-radius: 50%;
 }
 
 .photoContainer > img {
   width: 100%;
+  height: 100%;
 }
+
+.aboutMe {
+  border-bottom: 1px solid blue;
+}
+
+.aboutMe > p {
+  padding-left: 4px;
+}
+
+.contactInfo {
+  border-bottom: 1px solid blue;
+}
+
+.contactInfo > article {
+  padding-left: 4px;
+  margin-bottom: 12px;
+}
+
+.contactInfo > article > p {
+  margin: 0;
+}
+
+.certifications {
+  border-bottom: 1px solid blue;
+}
+
+.certifications > p {
+  padding-left: 4px;
+}
+
+
+

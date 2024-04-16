@@ -371,7 +371,7 @@ const CreateCVForm = ({ onCreate }) => {
             <section>
                 <article>
                     <label htmlFor="aboutMe">About me short description</label>
-                    <input id="aboutMe" type="text" />
+                    <input id="aboutMe" type="text" value={cvInfo.aboutMe} name="aboutMe" onChange={handleOnChange} />
                 </article>
             </section>
             <section>
