@@ -1,18 +1,6 @@
 import { useContext, useState } from "react";
 import { CvInfoContext } from "../context/CvInfoProvider";
-
-const initialWorkExpState = {
-    position: "",
-    companyName: "",
-    from: "",
-    to: "",
-    description: "",
-};
-
-const initialSkillsSetState = {
-    skillSetName: "",
-    skillsSet: "",
-};
+import { initialInfoState, initialSkillsSetState, initialWorkExpState } from "../utils/initialStates";
 
 const CreateCVForm = ({ onCreate }) => {
     const { cvInfo, setCvInfo } = useContext(CvInfoContext);
@@ -100,6 +88,13 @@ const CreateCVForm = ({ onCreate }) => {
           [e.target.name]: e.target.value
         }
       })
+    }
+
+    const handleReset = () => {
+        setCvInfo(initialInfoState)
+        setWorkExperience(initialWorkExpState)
+        setSkillsSet(initialSkillsSetState)
+        localStorage.removeItem("cvInfo")
     }
 
     return (
@@ -384,6 +379,7 @@ const CreateCVForm = ({ onCreate }) => {
                     Save for next time
                 </article>
                 <button type="submit">Create CV</button>
+                <button type="button" onClick={handleReset}>Reset</button>
             </section>
         </form>
     );

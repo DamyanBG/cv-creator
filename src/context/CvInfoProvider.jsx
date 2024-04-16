@@ -1,20 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-
-const initialInfoState = {
-  email: "",
-  firstName: "",
-  surname: "",
-  lastName: "",
-  profession: "",
-  phone: "",
-  address: "",
-  photo: "",
-  workExperiences: [],
-  skills: [],
-  certifications: [],
-  aboutMe: "",
-  education: {},
-};
+import { initialInfoState } from "../utils/initialStates";
 
 export const CvInfoContext = createContext(initialInfoState);
 
