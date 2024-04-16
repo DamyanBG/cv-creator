@@ -1,7 +1,5 @@
 import { createContext, useEffect, useState } from "react";
 
-export const CvInfoContext = createContext(null);
-
 const initialInfoState = {
   email: "",
   firstName: "",
@@ -15,7 +13,10 @@ const initialInfoState = {
   skills: [],
   certifications: [],
   aboutMe: "",
+  education: {},
 };
+
+export const CvInfoContext = createContext(initialInfoState);
 
 export const CvInfoProvider = ({ children }) => {
   const [cvInfo, setCvInfo] = useState(initialInfoState);
