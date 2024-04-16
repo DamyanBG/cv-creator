@@ -1,42 +1,88 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;600;700&display=swap');
+
+/* Now you can use the Open Sans font in your CSS rules */
+body {
+    font-family: 'Open Sans', sans-serif;
+    /* Additional CSS styling */
+}
+
+
+form {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.cvMain {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 48px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.left {
+  width: 50%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.names > h1 {
+  font-size: 36px;
+  font-weight: 900;
+  margin: 0;
 }
 
-.card {
-  padding: 2em;
+.names > article {
+  padding-top: 12px;
+  font-size: 18px;
+  border-bottom: 1px solid blue;
 }
 
-.read-the-docs {
-  color: #888;
+.workExperience > h3 {
+  font-weight: 500;
+}
+
+.experienceBlock > article > article {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.experienceBlock > :first-child {
+  display: flex;
+  background: yellow;
+}
+
+.experienceBlock .lineContainer {
+  padding-top: 4px;
+}
+
+.experienceBlock .line {
+  width: 50px;
+  height: 2px;
+  background: blue;
+  margin: 6px 0;
+}
+
+.experienceBlock > p {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  padding-left: 4px;
+}
+
+.companyName {
+  color: red;
+}
+
+/* .experienceBlock > :first-child > article::before {
+  display: block;
+  content: "";
+  width: 20px;
+  border-bottom: 1px solid blue;
+} */
+
+.right {
+  width: 30%;
+}
+
+.photoContainer {
+  width: 100%;
+}
+
+.photoContainer > img {
+  width: 100%;
 }

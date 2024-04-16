@@ -19,6 +19,11 @@ const CreateCVForm = ({ onCreate }) => {
     const [workExperience, setWorkExperience] = useState(initialWorkExpState)
     const [skillsSet, setSkillsSet] = useState(initialSkillsSetState)
     const [certificationName, setCertificationName] = useState("")
+    const [isSavingForLater, setIsSavingForLater] = useState(false)
+
+    const handleSavingForLaterCheck = () => {
+      setIsSavingForLater(!isSavingForLater)
+    }
 
     const handleOnChange = (e) => {
         setCvInfo({
@@ -71,7 +76,20 @@ const CreateCVForm = ({ onCreate }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        localStorage.setItem("cvInfo", JSON.stringify(cvInfo))
         onCreate()
+    }
+
+    const handlePhotoUpload = (e) => {
+      const file = e.target.files[0]
+      const reader = new FileReader()
+      reader.onload = (progresEvent) => {
+        setCvInfo({
+          ...cvInfo,
+          photo: progresEvent.target.result
+        })
+      }
+      reader.readAsDataURL(file)
     }
 
   return (
@@ -112,7 +130,7 @@ const CreateCVForm = ({ onCreate }) => {
       <section>
         <article>
           <label htmlFor="photo">Upload photo</label>
-          <input id="photo" type="file" />
+          <input id="photo" type="file" onChange={handlePhotoUpload} />
         </article>
       </section>
       <h3>Work experience</h3>
@@ -197,6 +215,10 @@ const CreateCVForm = ({ onCreate }) => {
         </article>
       </section>
       <section>
+        <article>
+          <input type="checkbox" checked={isSavingForLater} onChange={handleSavingForLaterCheck} />
+          Save for next time
+        </article>
         <button type="submit">Create CV</button>
       </section>
     </form>
