@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import CreateCVForm from "./CreateCVForm";
 import { CvInfoContext } from "../context/CvInfoProvider";
+import { formatDate } from "../utils/date";
 
 const MainComponent = () => {
     const { cvInfo } = useContext(CvInfoContext);
@@ -29,13 +30,9 @@ const MainComponent = () => {
                                 {cvInfo.workExperiences.map((we) => (
                                     <article key={we.from} className="experienceBlock">
                                         <article>
-                                            <article>{we.position}</article>
-                                            <article className="lineContainer">
-                                                <article className="line"/>
-                                            </article>
-                                            <article>{we.from}</article>
-                                            <article>-</article>
-                                            <article>{we.to}</article>
+                                            <article><strong>{we.position}</strong></article>
+                                            <article>{formatDate(we.from)}</article>
+                                            <article>{formatDate(we.to)}</article>
                                         </article>
                                         <p className="companyName">{we.companyName}</p>
                                         <p>{we.description}</p>
@@ -47,17 +44,14 @@ const MainComponent = () => {
                             <h3>Education</h3>
                             <p>{cvInfo.education.degreeDescription}</p>
                             <p>{cvInfo.education.university}</p>
-                            <p>{cvInfo.education.degreeFrom} - {cvInfo.education.degreeTo}</p>
+                            <p>{formatDate(cvInfo.education.degreeFrom)} - {formatDate(cvInfo.education.degreeTo)}</p>
                         </section>
                         <section className="skills">
                             <h3>Skills</h3>
                             <article>
                                 {cvInfo.skills.map((s) => (
                                     <article key={s.skillSet}>
-                                        <article>{s.skillSetName}</article>
-                                        <article className="lineContainer">
-                                            <article className="line" />
-                                        </article>
+                                        <article>{s.skillSetName}:</article>
                                         <article>{s.skillsSet}</article>
                                     </article>
                                 ))}

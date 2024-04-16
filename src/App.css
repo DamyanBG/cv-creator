@@ -3,7 +3,19 @@
 /* Now you can use the Open Sans font in your CSS rules */
 body {
     font-family: 'Open Sans', sans-serif;
-    /* Additional CSS styling */
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 900;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+article, p {
+  font-size: 14px;
 }
 
 @media print {
@@ -28,23 +40,23 @@ form {
 }
 
 .names > h1 {
-  font-size: 36px;
-  font-weight: 900;
   margin: 0;
 }
 
 .names > article {
   padding-top: 12px;
+  padding-bottom: 12px;
   font-size: 18px;
-  border-bottom: 1px solid blue;
+  font-weight: 600;
+  border-bottom: 1px solid #979FC3;
 }
 
 .workExperience {
-  border-bottom: 1px solid blue;
+  border-bottom: 1px solid #979FC3;
 }
 
-.workExperience > h3 {
-  font-weight: 500;
+.experienceBlock {
+  padding-bottom: 16px;
 }
 
 .experienceBlock > article > article {
@@ -54,7 +66,6 @@ form {
 
 .experienceBlock > :first-child {
   display: flex;
-  background: yellow;
 }
 
 .experienceBlock .lineContainer {
@@ -64,7 +75,7 @@ form {
 .experienceBlock .line {
   width: 50px;
   height: 2px;
-  background: blue;
+  background: #979FC3;
   margin: 6px 0;
 }
 
@@ -75,24 +86,24 @@ form {
 }
 
 .companyName {
-  color: red;
+  color: rgb(175, 40, 40);
+  font-size: 16px;
 }
 
 .education {
-  border-bottom: 1px solid blue;
+  border-bottom: 1px solid #979FC3;
 }
 
 .education > * {
   padding-left: 4px;
 }
 
-.skills > article > article {
-  display: flex;
-}
-
 .skills > article > article > * {
   padding-left: 4px;
   padding-right: 4px;
+}
+.skills > article > article {
+  padding-bottom: 12px;
 }
 
 .skills .lineContainer {
@@ -102,12 +113,12 @@ form {
 .skills .line {
   width: 30px;
   height: 2px;
-  background: blue;
+  background: #979FC3;
   margin: 6px 0;
 }
 
 .right {
-  width: 30%;
+  width: 40%;
 }
 
 .photoContainer {
@@ -120,7 +131,7 @@ form {
 }
 
 .aboutMe {
-  border-bottom: 1px solid blue;
+  border-bottom: 1px solid #979FC3;
 }
 
 .aboutMe > p {
@@ -128,7 +139,7 @@ form {
 }
 
 .contactInfo {
-  border-bottom: 1px solid blue;
+  border-bottom: 1px solid #979FC3;
 }
 
 .contactInfo > article {
@@ -141,12 +152,14 @@ form {
 }
 
 .certifications {
-  border-bottom: 1px solid blue;
+  border-bottom: 1px solid #979FC3;
 }
 
 .certifications > p {
   padding-left: 4px;
 }
 
-
+.achievements > p {
+  padding-left: 4px;
+}
 
