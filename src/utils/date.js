@@ -5,6 +5,7 @@ const monthNames = ["January", "February", "March", "April", "May", "June",
 
 
 export const formatDate = (dateString) => {
+    if (dateString === "Now") return dateString
     const date = new Date(dateString);
     const monthName = monthNames[date.getMonth()];
 

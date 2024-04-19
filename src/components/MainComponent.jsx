@@ -18,50 +18,15 @@ const MainComponent = () => {
             {showCv && (
                 <section className="cvMain">
                     <section className="left">
+                        <article className="photoContainer">
+                            <img src={cvInfo.photo} alt="CV Photo" />
+                        </article>
                         <section className="names">
                             <h1>
                                 {cvInfo.firstName} {cvInfo.lastName}
                             </h1>
                             <article>{cvInfo.profession}</article>
                         </section>
-                        <section className="workExperience">
-                            <h3>Work Experience</h3>
-                            <article>
-                                {cvInfo.workExperiences.map((we) => (
-                                    <article key={we.from} className="experienceBlock">
-                                        <article>
-                                            <article><strong>{we.position}</strong></article>
-                                            <article>{formatDate(we.from)}</article>
-                                            <article>{formatDate(we.to)}</article>
-                                        </article>
-                                        <p className="companyName">{we.companyName}</p>
-                                        <p>{we.description}</p>
-                                    </article>
-                                ))}
-                            </article>
-                        </section>
-                        <section className="education">
-                            <h3>Education</h3>
-                            <p>{cvInfo.education.degreeDescription}</p>
-                            <p>{cvInfo.education.university}</p>
-                            <p>{formatDate(cvInfo.education.degreeFrom)} - {formatDate(cvInfo.education.degreeTo)}</p>
-                        </section>
-                        <section className="skills">
-                            <h3>Skills</h3>
-                            <article>
-                                {cvInfo.skills.map((s) => (
-                                    <article key={s.skillSet}>
-                                        <article>{s.skillSetName}:</article>
-                                        <article>{s.skillsSet}</article>
-                                    </article>
-                                ))}
-                            </article>
-                        </section>
-                    </section>
-                    <section className="right">
-                        <article className="photoContainer">
-                            <img src={cvInfo.photo} alt="CV Photo" />
-                        </article>
                         <article className="aboutMe">
                             <h3>About me</h3>
                             <p>{cvInfo.aboutMe}</p>
@@ -70,28 +35,71 @@ const MainComponent = () => {
                             <h3>Contact Info</h3>
                             {cvInfo.address && (
                                 <article>
-                                    <p>Address:</p>
-                                    <p>{cvInfo.address}</p>
+                                    <p>Address: {cvInfo.address}</p>
                                 </article>
                             )}
                             {cvInfo.email && (
                                 <article>
-                                    <p>Email:</p>
-                                    <p>{cvInfo.email}</p>
+                                    <p>Email: {cvInfo.email}</p>
                                 </article>
                             )}
                             {cvInfo.phone && (
                                 <article>
-                                    <p>Phone number:</p>
-                                    <p>{cvInfo.phone}</p>
+                                    <p>Phone number: {cvInfo.phone}</p>
                                 </article>
                             )}
+                        </section>
+                        <section className="workExperience">
+                            <h3>Work Experience</h3>
+                            <article>
+                                {cvInfo.workExperiences.map((we) => (
+                                    <article
+                                        key={we.from}
+                                        className="experienceBlock"
+                                    >
+                                        
+                                        <article>
+                                            <strong>{we.position}</strong>
+                                        </article>
+                                        <article>
+                                            {formatDate(we.from)} - {formatDate(we.to)}
+                                        </article>
+                                        
+                                        <p className="companyName">
+                                            {we.companyName}
+                                        </p>
+                                        <p>{we.description}</p>
+                                    </article>
+                                ))}
+                            </article>
+                        </section>
+                    </section>
+                    <section className="right">
+                        <section className="skills">
+                            <h3>Skills</h3>
+                            <article>
+                                {cvInfo.skills.map((s) => (
+                                    <article key={s.skillSet}>
+                                        <article><strong>{s.skillSetName}</strong>:</article>
+                                        <article>{s.skillsSet}</article>
+                                    </article>
+                                ))}
+                            </article>
                         </section>
                         <section className="certifications">
                             <h3>Certifications</h3>
                             {cvInfo.certifications.map((cert) => (
                                 <p key={cert}>{cert}</p>
                             ))}
+                        </section>
+                        <section className="education">
+                            <h3>Education</h3>
+                            <p>{cvInfo.education.degreeDescription}</p>
+                            <p>{cvInfo.education.university}</p>
+                            <p>
+                                {formatDate(cvInfo.education.degreeFrom)} -{" "}
+                                {formatDate(cvInfo.education.degreeTo)}
+                            </p>
                         </section>
                         <section className="achievements">
                             <h3>Achievements</h3>

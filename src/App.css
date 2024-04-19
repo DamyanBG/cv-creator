@@ -51,10 +51,6 @@ form {
   border-bottom: 1px solid #979FC3;
 }
 
-.workExperience {
-  border-bottom: 1px solid #979FC3;
-}
-
 .experienceBlock {
   padding-bottom: 16px;
 }
@@ -64,25 +60,11 @@ form {
   padding-right: 4px;
 }
 
-.experienceBlock > :first-child {
-  display: flex;
-}
 
-.experienceBlock .lineContainer {
-  padding-top: 4px;
-}
-
-.experienceBlock .line {
-  width: 50px;
-  height: 2px;
-  background: #979FC3;
-  margin: 6px 0;
-}
 
 .experienceBlock > p {
   margin-top: 6px;
   margin-bottom: 6px;
-  padding-left: 4px;
 }
 
 .companyName {
@@ -94,8 +76,12 @@ form {
   border-bottom: 1px solid #979FC3;
 }
 
-.education > * {
+.education > p {
   padding-left: 4px;
+}
+
+.skills {
+  border-bottom: 1px solid #979FC3;
 }
 
 .skills > article > article > * {
@@ -117,12 +103,17 @@ form {
   margin: 6px 0;
 }
 
+.skills strong {
+  font-weight: 600;
+}
+
 .right {
   width: 40%;
 }
 
 .photoContainer {
-  position: relative; width: 200px; height: 200px; overflow: hidden; border-radius: 50%;
+  margin-bottom: 12px;
+  position: relative; width: 150px; height: 150px; overflow: hidden; border-radius: 50%;
 }
 
 .photoContainer > img {
